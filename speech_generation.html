@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <link rel="shortcut icon" type="image/jpg" href="images/my-icon.jpg">
+  
+  <title> Yixian Zhou</title>
+
+  </head>
+  <body>
+  <a class="skip" href="#main-content"> Jump to Content</a>
+  
+  <header>
+    <nav>
+    <ul class="nav_links">
+      <li class="nav_item">
+      <a href="main.html">Home</a>
+      </li>
+      <li class="nav_item">
+      <a href="speech_generation.html">Speech Generation</a>
+      </li>
+      <li class="nav_item">
+      <a href="students_socialization.html">Research</a>
+      </li>
+      <li class="nav_item">
+      <a href="sports.html">Table Tennis</a>
+      </li>
+      
+    </ul>
+    </nav>
+  </header>
+
+  <main class="main", id="speech">
+    <h1>Audio Augmented Speech Generation</h1>
+    <div id="speech-content">
+      <div class="subsection">
+        <p>
+          Chatting robots have become popular these days. Most of them implement dialogue systems that work on text data extracted from audio conversations. However, conversation bots like Alexa and Google Home do not sense emotions because people also convey emotions and sentiments in conversations by changing their accent, tone, and speed etc. In other words, audio contains useful information such as emotions and sentiments which text cannot capture and dialogue systems may generate template-based and repetitive responses without noticing the change in people’s voice. 
+        </p>
+      </div>
+      <div class="subsection">
+        <h2>Model</h2>
+        <p>
+          Our model has two parts:
+          <ul id="model-parts">
+            <li>Classifiers which detect sentiment and emotion through text data and audio files
+            </li>
+            <li>Language Generation model which incorporates sentiments, emotions along with audio and textual features
+            </li>
+          </ul>
+        </p>
+      </div>
+      <div class="subsection">
+        <h2>Methods</h2>
+        <p>
+          We have tried several clustering methods including K-Means Clustering, Agglomerative Clustering, and DBSCAN. Unlike supervised learning, it is very hard to evaluate unsupervised learning algorithms as they do not have ground truth.
+        </p>
+      </div>
+      <div class="subsection">
+        <h2>Results</h2>
+        <p> We are working very hard on developing the model. The model hasn't been finalized yet. But I still want to share some results we have gotten so far.
+        </p>
+        
+        <h3>Emotion Classification</h3>
+        <div class="container">
+          
+          <div class="item">
+            <h4>Baseline</h4>
+            <img id="emo-base" src="images/speech_gen/emo-base.png" alt="baseline of emotion classification">
+          </div>
+          <div class="item">
+            <h4>Our model</h4>
+            <img id="emo-logit" src="images/speech_gen/emo-logit.png" alt="emotion classification report of our model">
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <p>Yixian Zhou</p>
+    <p>
+    Contact: <a href="zyixian@umich.edu">zyixian [at] umich [dot] edu</a>
+    </p>
+  </footer>
+
+
+  </body>
+</html>
