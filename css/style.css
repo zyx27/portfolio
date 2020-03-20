@@ -256,6 +256,12 @@ footer{
   body{
     font-size: 14pt;
   }
+  .nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+  }
   
   /* Landing */
   div#info {
