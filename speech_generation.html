@@ -13,16 +13,20 @@
 
   </head>
   <body>
-  <a class="skip" href="#main-content"> Jump to Content</a>
-  
+  <aside id="jump">
+    <a class="skip" href="#main-content"> Jump to Content</a>
+  </aside>  
   <header>
+    <div id="logo">
+      <a href="main.html" aria-label="homepage"><img id="head-icon" src="images/my-icon.jpg" alt="" /></a>
+    </div>
     <nav>
     <ul class="nav_links">
       <li class="nav_item">
       <a href="main.html">Home</a>
       </li>
       <li class="nav_item">
-      <a href="speech_generation.html">Speech Generation</a>
+      <a class="current" href="speech_generation.html">Speech Generation</a>
       </li>
       <li class="nav_item">
       <a href="students_socialization.html">Research</a>
@@ -35,7 +39,7 @@
     </nav>
   </header>
 
-  <main class="main", id="speech">
+  <main id="main-content">
     <h1>Audio Augmented Speech Generation</h1>
     <div id="speech-content">
       <div class="subsection">

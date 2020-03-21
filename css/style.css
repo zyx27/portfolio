@@ -12,6 +12,93 @@ body {
   margin: 0;
   padding: 30px;
   font-size: 10pt;
+  
+}
+
+a.skip {
+  /* display: block; */
+  position: relative;
+  left: -180px;
+  -webkit-transition: left 0.5s ease-out;
+  transition: left 0.5s ease-out;
+  z-index: 1;
+  
+}
+
+a.skip:focus {
+  left: 0px;
+}
+
+/* a.skip{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+a.skip:focus{
+  top:20px;
+  color: black;
+  text-decoration-style: solid;
+} */
+
+
+header {
+  border-bottom: 2px solid #5F8AC6;
+  margin-bottom: 20px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+#head-icon {
+  /* ref: https://css-tricks.com/clipping-masking-css/ */
+  width:38px; 
+  clip-path: circle(13px at center);
+  border: 1px solid   #9399CC ;
+}
+
+#logo{
+  text-align: center;
+}
+
+/* Nav */
+.current {
+    border: 0.5px  #9399CC solid;
+  
+}
+.nav_links{
+  padding: 0;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}
+.nav_item{
+  text-align: center;
+  margin: 0.5px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+.nav_item a{
+  color:  #4D4F6A;
+  padding: 1px;
+  text-decoration: none;
+}
+
+.nav_item a:hover, a:focus{
+  color: black;
+  text-decoration: underline overline;
+  /* -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted; */
 }
 
 h1 {
@@ -40,11 +127,15 @@ h4 {
 }
 
 p {
-  padding: 10px 40px; 
+  color: #4D4F6A;
+  padding: 10px 40px;
+  line-height: 150%; 
 }
 
 ul {
   padding: 0px 10px 0px 55px;
+  line-height: 150%; 
+
   list-style-type: circle;
 }
 
@@ -52,33 +143,6 @@ ul {
 #intro {
   text-align: center;
 }
-/* Nav */
-.nav_links{
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-}
-
-.nav_item a{
-  color: gray;
-  padding: 5px;
-  margin-right: 10px;
-  margin-left: 10px;
-
-  text-decoration: none;
-}
-.nav_links a.selected:link, a.selected:visited{
-  display: block;
-  boder: 0.5px gray solid;
-}
-.nav_item a:hover, a:focus{
-  color: black;
-  text-decoration: underline overline;
-  /* -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted; */
-}
-
 /* Info */
 
 #info > img {
@@ -92,21 +156,22 @@ ul {
 /* Projects */
 .projects {
   /* padding: 20px; */
-  height: auto;
+  /* width: 100%; */
+  /* height: auto; */
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   justify-content: space-evenly;
 }
 
 div.project {
-  width: 400px;
-  height: 400px;
-  padding: 0;
-
-
+  width: 350px;
+  height: 350px;
+  /* width: 100%; */
+  /* height: auto; */
+  margin: 10px auto 10px auto;
   /* margin-left: auto;
   margin-right: auto; */
-  border: 10px gray solid;
+  border: 2px  #9399CC solid;
   background-color: transparent;
   perspective: 1000px;
   overflow: hidden;
@@ -129,6 +194,9 @@ div.project {
 .project:hover .flip {
   transform: rotateY(180deg);
 }
+.project:focus .flip {
+  transform: rotateY(180deg);
+}
 
 /* Position the front and back side */
 .flip-front, .flip-back {
@@ -139,12 +207,21 @@ div.project {
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
+.flip-back >a> h3 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .flip-back >a> h3, .description {
-  width: 80%;
+  width: 290px;
   display: block;
+  padding: 0;
+  /* margin: 40; */
   margin-top: 40px;
   margin-bottom: auto;
   text-align: center;
+  
 }
 
 .flip-front {
@@ -153,8 +230,8 @@ div.project {
 }
 
 .flip-front > img {
-  
-  height: 400px;
+  width: auto;
+  height: 350px;
   margin: 0
 }
 
@@ -167,6 +244,18 @@ div.project {
   -o-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
+}
+.project {
+  width: 350px;
+  height: 350px;
+}
+.flip-back {
+  width:350px;
+}
+/* Results */
+h3 {
+  text-align: left;
+  text-indent: 1em;
 }
 
 
@@ -185,9 +274,16 @@ div.project {
   height: auto;
   flex: 0 0 auto;
   overflow: hidden;
-  /* ref: https://css-tricks.com/clipping-masking-css/ */
-
+  -webkit-filter: opacity(0.8);
+  filter: opacity(0.8);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
+.gallery>img:hover {
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+}
+
 
 /* Results */
 .container{
@@ -199,21 +295,76 @@ div.project {
 
 .item {
   text-align: center;
-  padding: 2px 20px;
+  padding: 5px 20px;
 }
 .item > img{
-  max-width: 90%;
+  max-width: 80%;
   height: auto;
   overflow: hidden;
 }
 
+/* animation */
+
+@-webkit-keyframes moveball{
+  from{
+    width: 20px;
+  }
+  to{
+    width: 80px;
+  }
+} 
+@keyframes moveball{
+  from{
+    width: 20px;
+  }
+  to{
+    width: 80px;
+  }
+
+}
+/* 
+#tt-animate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  */
+
+#animate-ball{
+  bottom: 0;
+  max-width: 5%;
+  margin: 0 auto 0 auto;
+  position:relative;
+  /* z-index: 1; */
+  -webkit-animation-name: moveball;
+  -webkit-animation-iteration-count: 5;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  animation-name: moveball;
+  animation-iteration-count: 5;
+  
+  /* animation-iteration-count: infinite; */
+}
+
+
+
 footer{
-  height: 40px;
-  background-color:#DCDCDC;
-  color: black;
+  display: block;
+  height: 45px;
+  background-color:#4D5D7B;
+  color: white;
   /* margin-top:10px; */
-  padding: 30px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+}
+footer > p {
+  color: white;
+  padding: 0;
+}
+footer > p > a {
+  color: white;
 }
 
 /* tablet */
@@ -225,13 +376,24 @@ footer{
   h2 {
     text-align: left;
   }
-
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+  }
   .nav_links{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     list-style: none;
   }
+
+  .nav_item{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+    
 
   .gallery {
     display: flex;
@@ -246,6 +408,33 @@ footer{
   .container{
     grid-template-columns: auto auto;
   }
+  div.item>img {
+    width: 95%;
+  }
+  .item {
+    text-align: center;
+    padding: 10px 5px;
+  }
+
+  /* Projects tablet */
+  .projects {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+  }
+  .project {
+    width: 300px;
+    height: 300px;
+  }
+  .flip-back {
+    width: 300px;
+  }
+  /* Results */
+  h3 {
+    text-align: left;
+    text-indent: 1em;
+  }
+
 
 
 
@@ -253,8 +442,16 @@ footer{
 
 /* larger screen */
 @media screen and (min-width: 1181px){
+  
   body{
     font-size: 14pt;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
   }
   .nav_links{
     display: flex;
@@ -291,6 +488,19 @@ footer{
   h2 {
     text-align: left;
   }
+  /* Projects */
+  .projects {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+  }
+  .project {
+    width: 350px;
+    height: 350px;
+  }
+  .flip-back {
+    width:350px;
+  }
   /* Results */
   h3 {
     text-align: left;
@@ -304,8 +514,21 @@ footer{
 
 @media screen and (prefers-reduced-motion: reduce){
   html{
-    scroll-behavior: auto; /* Removes scroll animation */
+    scroll-behavior: auto;
   }
+
+  .gallery > img{
+    -webkit-filter: none;
+    filter: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .gallery>img:hover {
+    -webkit-filter: none;
+    filter: none;
+  }
+
+
 
   
 }

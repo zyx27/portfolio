@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,18 @@
 
   </head>
   <body>
-    <a class="skip" href="#main-content"> Jump to Content</a>
-    
-    <header>
+    <aside id="jump">
+      <a class="skip" href="#main-content"> Jump to Content</a>
+    </aside>
+    <header id="web-head">
+      <div id="logo">
+        <a href="main.html" aria-label="homepage"><img id="head-icon" src="images/my-icon.jpg" alt="" /></a>
+        
+      </div>
       <nav>
         <ul class="nav_links">
           <li class="nav_item">
-            <a href="main.html">Home</a>
+            <a class="current" href="main.html">Home</a>
           </li>
           <li class="nav_item">
             <a href="speech_generation.html">Speech Generation</a>
@@ -34,8 +40,9 @@
         </ul>
       </nav>
     </header>
-
-    <main id="main-content landing">
+    
+    
+    <main id="main-content">
       <h1>Yixian Zhou</h1>
       <p id="intro">A passionate data analyst as well as a crazy fan of table tennis.</p>
 
@@ -70,7 +77,7 @@
           </div>
         </div>
         
-        <div class="project" id="landing-speech">
+        <div class="project" id="landing-stu">
           <div class="flip">
             <div class="flip-front">
               <img id="stu-cover" src="/images/main/stu_cover.jpg" alt="speech generation picture">

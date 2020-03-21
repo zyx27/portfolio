@@ -13,9 +13,14 @@
 
   </head>
   <body>
-    <a class="skip" href="#main-content"> Jump to Content</a>
+    <aside id="jump">
+        <a class="skip" href="#main-content"> Jump to Content</a>
+    </aside>  
     
     <header>
+      <div id="logo">
+        <a href="main.html" aria-label="homepage"><img id="head-icon" src="images/my-icon.jpg" alt="" /></a>
+      </div>
       <nav>
         <ul class="nav_links">
           <li class="nav_item">
@@ -28,15 +33,22 @@
             <a href="students_socialization.html">Research</a>
           </li>
           <li class="nav_item">
-            <a href="sports.html">Table Tennis</a>
+            <a class="current" href="sports.html">Table Tennis</a>
           </li>
         
         </ul>
       </nav>
     </header>
 
-    <main id="main-content sports">
+    <main id="main-content">
       <h1>My Favorite Sport</h1>
+      <!-- <div id="tt-animate">
+        
+        <img class="animate" id="animate-paddle" src="images/animate-paddle.png" alt=""/>
+        <img class="animate" id="animate-ball" src="images/animate-ball.png" alt=""/>
+        
+          
+      </div> -->
       <div id="sports-content">
           <p>
             Table tennis (Ping Pong) is a very import part of my life. I started learning table tennis when I was 9 and fell in love with it in my first week of training. Then I trained for almost 4 years during summer and winter breaks. Table tennis means a lot to me. Every time I am stressed or upset, I get my paddle, practice with my friends, and feel all the negative thoughts go away.
